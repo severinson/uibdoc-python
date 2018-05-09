@@ -42,7 +42,7 @@ a = 4
 if a < 5:
     print("a is less then 5")
 
-b = 5
+b = 5 # try changing this value
 if b < 5:
     print("b is less then 5")
 elif b < 10:
@@ -52,7 +52,7 @@ else:
 
 # loops: for doing things multiple times
 print("--- loops ---")
-for i in range(10):
+for i in range(10): # in Python we use range(n) to do something n times
     print("FOR: i=", i)
 
 j = 0
@@ -110,13 +110,13 @@ The concept involved in each task are written in parentheses.
 
 task 1: Create a list of all numbers from 0 to 10 using a loop (or
 some other way that does not involve manually writing all 10
-numbers). (loops)
+numbers). Print this list. (loops)
 
 task 2: Create a dict mapping the integers 1 through 13 to their
-square root. (dict, math)
+square root. Print the resulting dict. (dict, math)
 
 task 3: Sum all numbers in the list [4, 90, 13, 3, 107] that are
-larger than 20. (for loop, if)
+larger than 20. Print the result. (for loop, if)
 
 task 4: Multiply the elements with odd indices, i.e., 1, 3, 5, ..., in
 the list of all integers 0 to 10 by 3. Print the resulting
@@ -142,6 +142,6 @@ times you had to run the function. Append this number to a list. Do
 this at least a few thousand times to get enough samples.
 
 - Create a dict that maps the length of the sequence of heads to the
-- number of times this happened.
+number of times this happened.
 
 '''
