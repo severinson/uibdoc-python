@@ -30,10 +30,13 @@ x = [1, 2, 3, 4]
 y = [13.46688604, 18.58857204, 20.51804834, 27.6660338]
 
 First, plot the given x and y data. Second, fit parameters (a, b) to
-the data, third plot the given x and y together with the fit curve.
+the data, third plot the given x and y together with the fit
+curve. Use np.linspace to find values of x.
 
 task: use pandas.read_csv to read the csv file "scatter.csv", print it
 to terminal, and then plot its "x" column against its "y" column using
 pyplot.
+
+task: beat my weather model.
 
 '''
