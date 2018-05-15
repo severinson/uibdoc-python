@@ -4,14 +4,12 @@ cover more advanced concept and the Python for scientific computing.
 
 I am convinced that the best way to learning programming is to
 actually program. Hence, your first task is to write the code below
-into a new text file. Run your code between each of the sections
-(delimited by a #) and look at the output. Try changing some of the
-values and code to see what happens.
+into the REPL (the interactive Python terminal). Run one segment at a
+time to see what it does. Try changing some of the values and code to
+see what happens.
 
-If you haven't used Python before I recommend you type manually
-instead of copying.
-
-The remaining tasks are found the bottom of the document.
+I have some more tasks at the bottom of the document. If you already
+feel comfortable with all of this you can go straight to the tasks.
 
 '''
 
@@ -102,9 +100,15 @@ print("sqrt(2)=", math.sqrt(2))
 
 '''
 
-These tasks are for you to work on your own. I recommend creating a
-new file for each task to keep it from being cluttered. Tasks 1-5 can
-be completed in one line of code if you want to be fancy.
+If you don't have much prior programming experience I recommend going
+to this site and doing the exercises there.
+http://codingbat.com/python
+
+If you have some prior programming experience and just want to learn
+the how to do thing in Python I recommend doing the following few
+tasks. I recommend I recommend creating a new file for each task to
+keep it from being cluttered. Tasks 1-5 can be completed in one line
+of code if you want to be fancy.
 
 The concept involved in each task are written in parentheses.
 
