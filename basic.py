@@ -98,6 +98,36 @@ print("--- math ---")
 import math # math library has to be imported
 print("sqrt(2)=", math.sqrt(2))
 
+# Objects in python
+class Rectangle(object):
+    '''Class representing a rectangle.
+
+    '''
+
+    def __init__(self, a, b):
+        '''Constructor for the Rectangle object. Called with Rectangle(a,
+        b). This is a so-called magic method. self is always given as
+        the first argument to object methods and is used to access the
+        object variables.
+
+        '''
+        self.a = a # the equivalent of this in Java
+        self.b = b
+        return
+
+    def __repr__(self):
+        '''Return a string representation of the object. The equivalent of
+        toString() in Java.
+
+        '''
+        return 'Rectangle({}, {})'.format(self.a, self.b)
+
+    def area(self):
+        '''Return the area of the rectangle.
+
+        '''
+        return self.a * self.b
+
 '''
 
 If you don't have much prior programming experience I recommend going
@@ -105,10 +135,10 @@ to this site and doing the exercises there.
 http://codingbat.com/python
 
 If you have some prior programming experience and just want to learn
-the how to do thing in Python I recommend doing the following few
-tasks. I recommend I recommend creating a new file for each task to
-keep it from being cluttered. Tasks 1-5 can be completed in one line
-of code if you want to be fancy.
+how to do things in Python I recommend doing the following few
+tasks. I recommend creating a new file for each task to keep it from
+getting cluttered. Tasks 1-5 can be completed in one line of code if
+you want to be fancy.
 
 The concept involved in each task are written in parentheses.
 
@@ -147,5 +177,26 @@ this at least a few thousand times to get enough samples.
 
 - Create a dict that maps the length of the sequence of heads to the
 number of times this happened.
+
+Task 7: Create a class Pokemon that stores the name, current hit
+points and strength of the Pokemon. The Pokemon class must have the
+following methods:
+
+- Constructor (__init__) that takes arguments name, max hit points and
+strength.
+
+- Method damage that takes as argument a number and inflicts that
+  amount of damage to the Pokemon.
+
+- Method attack that takes another Pokemon object as argument and
+  inflicts damage to that Pokemon. The amount of damage should be
+  proportional to the strength of the attacking Pokemon. I leave the
+  specifics to you.
+
+- Method is_conscicious that returns True if the Pokemon has 1 or more
+  hit points and False otherwise.
+
+Now make the Pokemon fight (letting the Pokemon be friends is also
+acceptable)!
 
 '''
