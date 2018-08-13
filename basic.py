@@ -17,7 +17,8 @@ feel comfortable with all of this you can go straight to the tasks.
 print("Hello, this script introduces the most commonly used features in Python!")
 print()
 
-# variables: for storing values and data
+# variables: for storing values and data. unlike in Java variables in
+# Python can hold values of any type.
 print("--- variables and printing them ---")
 name = "Albin"
 print("Hello,", name)
@@ -26,6 +27,16 @@ first_name = "Albin"
 last_name = "Severinson"
 full_name = first_name + " " + last_name
 print(full_name)
+
+# strings in Python are immutable (cannot be changed) like in
+# Java. also like in Java strings are classes with methods that allow
+# you to make various changes. see https://docs.python.org/3.7/library/stdtypes.html#string-methods
+s0 = 'Captain Jack'
+s1 = s0.strip(' Jack')
+s2 = s0.replace('Jack', 'Anya')
+print(s0)
+print(s1)
+print(s2)
 
 a = 4
 b = 3
@@ -53,6 +64,11 @@ print("--- loops ---")
 for i in range(10): # in Python we use range(n) to do something n times
     print("FOR: i=", i)
 
+# however, the pythonic way is to loop over collections, not indices
+words = ['foo', 'bar', 'foobar'] # this is a list
+for word in words:
+    print(word)
+
 j = 0
 while j < 10:
     print("WHILE j=", j)
@@ -74,6 +90,7 @@ print("first element", l[0])
 print("second element", l[1])
 print("first 2 elements", l[:2])
 print("3rd to 4th elements", l[2:4])
+print("last element", l[-1]) # so-called negative indexing
 
 # dictionaries: for associating something with something else
 print("--- dictionaries ---")
@@ -82,6 +99,14 @@ d["foo"] = 1 # "foo" is called the key and 1 is the value it maps to.
 d["bar"] = "cool"
 print(d)
 print("d[\"foo\"]=", d["foo"])
+
+# tuples: for storing an immutable ordered collection of items
+print("--- tuples ---")
+t = (1, 2, 'foo')
+print(t)
+# t[0] = 10 doesn't work!
+a, b, c = t # tuple unpacking
+print(a, b, c)
 
 # functions: for re-using code
 print("--- functions ---")
@@ -93,12 +118,20 @@ def f(a, b):
 result = f(2, 10)
 print("results is", result)
 
+# tuple unpacking allows for multiple return values
+def g(a, b, c):
+    return (a+b, b+c)
+
+v1, v2 = g(1, 2, 3)
+print('g returns two values', v1, v2)
+
 # math: square root and other math operators
 print("--- math ---")
-import math # math library has to be imported
+import math # math library is a module that has to be imported
 print("sqrt(2)=", math.sqrt(2))
 
 # Objects in python
+print("--- objects ---")
 class Rectangle(object):
     '''Class representing a rectangle.
 
@@ -111,7 +144,7 @@ class Rectangle(object):
         object variables.
 
         '''
-        self.a = a # the equivalent of this in Java
+        self.a = a # corresponding to this in Java
         self.b = b
         return
 
@@ -120,6 +153,8 @@ class Rectangle(object):
         toString() in Java.
 
         '''
+        # format is used to create strings containing variable values
+        # print('__repr__ function called!')
         return 'Rectangle({}, {})'.format(self.a, self.b)
 
     def area(self):
@@ -127,6 +162,10 @@ class Rectangle(object):
 
         '''
         return self.a * self.b
+
+r = Rectangle(10, 5)
+print(r) # automatically calls the __repr__ function
+print('the area of', r, 'is', r.area())
 
 '''
 
@@ -144,17 +183,22 @@ The concept involved in each task are written in parentheses.
 
 task 1: Create a list of all numbers from 0 to 10 using a loop (or
 some other way that does not involve manually writing all 10
-numbers). Print this list. (loops)
+numbers). Print this list. You can do it in one line using list
+comprehension. (loops)
 
 task 2: Create a dict mapping the integers 1 through 13 to their
-square root. Print the resulting dict. (dict, math)
+square root without writing each entry manually. Print the resulting
+dict. You can do it in one line using dict comprehension. (dict, math)
 
 task 3: Sum all numbers in the list [4, 90, 13, 3, 107] that are
-larger than 20. Print the result. (for loop, if)
+larger than 20. Print the result. You can do it in one line using list
+comprehension and the sum function or the reduce function. (for loop,
+if)
 
 task 4: Multiply the elements with odd indices, i.e., 1, 3, 5, ..., in
-the list of all integers 0 to 10 by 3. Print the resulting
-list. (lists, list indexing, loops)
+the list of all integers 0 to 10 by 3. Print the resulting list. You
+can do it in one line using list comprehension. (lists, list indexing,
+loops)
 
 task 5: Write a function that takes a dictionary as its argument and
 returns a list of all values in the dictionary. You probably need to
@@ -198,5 +242,23 @@ strength.
 
 Now make the Pokemon fight (letting the Pokemon be friends is also
 acceptable)!
+
+Task 8: Add unit tests to your Pokemon program. This requires reading
+up on how the unittest module works.
+
+Task 9: Expand your Pokemon program by finding creative uses for the
+following features (example features in parentheses):
+
+- reading/writing files (create a savefile system that allows you to
+  write all stats about a Pokemon to a file on disk and to load those
+  back next time you run the program. roll your own or look into the
+  picke module.)
+
+- lists/dicts/sets (write a trainer class that has a list of Pokemon
+  in his inventory. each Pokemon object may contain a dict mapping
+  move names to the different types of attacks it may carry out.)
+
+- modules and packages (make your program into a package containing
+  multiple modules)
 
 '''
